@@ -1,0 +1,36 @@
+.TableRow1 {
+	background-color: #006633;
+	color: white;
+	text-align: center;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	font-size: 12px;
+}
+table{
+	border-collapse: separate;
+}
+.TableRow{
+	background-color: #eeeeee;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	font-size: 11px;
+}
+.TableRow3{
+	background-color: #dddddd;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	font-size: 11px;
+}
+.EditableText{
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	border-width: 1px;
+	font-weight: normal;
+	padding: 1px 0px;
+}
+ .col-sm-4, .col-sm-8 {
+    position: relative;
+    width: 100%;
+    padding-right: 0px;
+	padding-left: 0px;
+}
+.row{
+	padding-right: 25px;
+	padding-left: 25px;
+}

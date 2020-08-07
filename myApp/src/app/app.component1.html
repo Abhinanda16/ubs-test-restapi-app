@@ -1,0 +1,227 @@
+<div>
+  <nav class="navbar navbar-icon-top navbar-expand-lg">
+      <div id="navbar-justify" data-toggle="collapse" data-target="#navbarContent"
+            aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="fa fa-align-justify"></span>
+    </div>
+    <img height="40" alt="UBS Logo" src="../assets/ubs-logo.png"/>
+    <div id="application-name" style="margin-left: 20px">
+      <h3 style="margin-bottom: 0px">Global Rating Tool</h3>
+    </div>
+    
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+        </ul>
+        <ul class="navbar-nav ">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="notificationDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <i class="fa fa-bell">
+                <span class="badge badge-info" *ngIf="showNewVideo">1</span>
+              </i>
+              Notification
+            </a>
+            <div class="dropdown-menu" aria-labelledby="notificationDropdown" *ngIf="showNewVideo">
+              <a class="dropdown-item" href="#">New video "{{newVideoObj.description}}" just uploaded</a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <i class="fa fa-envelope-o">
+                <span class="badge badge-success">1</span>
+              </i>
+              Email
+            </a>
+          </li>
+          <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fa fa-user">
+                </i>
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">My Account</a>
+                <a class="dropdown-item" href="#">Logout</a>
+              </div>
+            </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-danger my-2 my-sm-0" type="submit">Search</button>
+        </form>
+      </div>
+    </nav>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="collapse show navbar-collapse col-sm-2 col-md-2 col-lg-2" id="navbarContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                &nbsp;<i class="fa fa-home"></i>&nbsp; Home
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                &nbsp;<i class="fa fa-info-circle"></i>&nbsp; About
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                &nbsp;<i class="fa fa-calendar"></i>&nbsp; Events
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                &nbsp;<i class="fa fa-image"></i>&nbsp; Photos
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                &nbsp;<i class="fa fa-youtube"></i>&nbsp; Videos
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                &nbsp;<i class="fa fa-cog"></i>&nbsp; Support
+              </a>
+            </li>
+          </ul>
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="https://github.com/CherryKatatonic">
+                &nbsp;<i class="fa fa-github"></i>&nbsp; Github
+              </a>
+            </li>
+          </ul>
+        </div>
+
+<div class="col-sm-6 col-md-6 col-lg-6">
+<table border="0" cellpadding="1" cellspacing = "1"
+	bgcolour="#FFFFFF" width ="100%">
+	<tbody>
+		<tr>
+			<td colspan="7" align="center" height="23" class="TableRow1">Rating Scoring</td>
+		</tr>
+		<tr>
+			<td align="center"  height="23" class="TableRow1">Criteria</td>
+			<td align="center" height="23" class="TableRow1">Score</td>
+		</tr>
+		<tr>
+			<td align="left" height="23" class="TableRow" >Investment Manager</td>
+      <td align="left" height="23" class="TableRow" ><input type="text" id="invm" value="0.0" class="EditableText" [(ngModel)]="invm
+        "></td>	
+		</tr>
+		<tr>
+			<td align="left" height="23" class="TableRow3">Risk Profile</td>
+			<td align="left" height="23" class="TableRow3" ><input type="text" value="0.0" class="EditableText" [(ngModel)]="riskp"></td>
+		</tr>
+		<tr>
+			<td align="left" height="23" class="TableRow">Performance</td>
+			<td align="left" height="23" class="TableRow" ><input type="text" value="0.0" class="EditableText" [(ngModel)]="perf"></td>
+		</tr>
+	</tbody>
+</table>
+
+&nbsp;
+<div class="row" >
+<button class ="btn-success"type="button" (click)="fetchResult()">Calculate Rating</button>
+&nbsp;
+<button class ="btn-success"type="button" (click)="getNews()">Call Rest method</button>
+                </div>
+</div>
+<div class="col-sm-4 col-md-4 col-lg-4">
+<table border="0" cellpadding="1" cellspacing = "1"
+	bgcolour="#FFFFFF" width ="100%">
+	<tbody>
+		<tr>
+			<td colspan="7" align="center" height="23" class="TableRow1">Rating</td>
+		</tr>
+		<tr>
+			<td align="left" height="23" class="TableRow" >Calculated Rating</td>
+			<td align="left" height="23" class="TableRow" >C04</td>	
+		</tr>
+		<tr>
+			<td align="left" height="23" class="TableRow3">Analysed Rating</td>
+			<td align="left" height="23" class="TableRow3" >C04</td>
+		</tr>
+		<tr>
+			<td align="left" height="23" class="TableRow" >Final Rating</td>
+			<td align="left" height="23" class="TableRow" >
+        <input value="0.0" class="EditableText" readonly="true" [(ngModel)]="finalRating">
+      </td>
+		</tr>
+		<tr>
+			<td align="left" height="23" class="TableRow3">TTC PD</td>
+			<td align="left" height="23" class="TableRow3" >0.17%</td>
+		</tr>
+		<tr>
+			<td align="left" height="23" class="TableRow">PIT PD</td>
+			<td align="left" height="23" class="TableRow" >0.15%</td>
+		</tr>
+	</tbody>
+</table>
+
+</div>
+
+
+
+<!--       <div class="col-sm-10 col-md-10 col-lg-10" style="margin-top: 10px">
+          <div class="container-fluid">
+              <div class="row">
+                  <div class="col-sm-12 col-md-12 col-lg-12">
+                      <h4>Recommended videos</h4>
+                    </div>
+                    <div ng-include="'home.html'"></div>
+                <div class="blockConatiner" *ngFor="let video of recommendedVideoList() | slice:0:2; let i=index">
+                    <video id={{video.name}} controls poster='https://learningbytecdnendpoint.azureedge.net/{{video.imageName}}'>
+                        <source src='https://learningbytecdnendpoint.azureedge.net/{{video.name}}' type="video/mp4">
+                      Your browser does not support the video tag.
+                    </video>
+                    <div>
+                      {{video.description}}
+                    </div>
+                    <div style="font-size: 12px">
+                      <span>{{video.views}} views</span>
+                      <span style="float: right;">{{video.uploadedOn}}</span>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-12 col-lg-12">
+                    <h4>Trending videos</h4>
+                  </div>
+                  <div class="blockConatiner" *ngFor="let video of sortedVideoList() | slice:0:4; let i=index">
+                    <video id={{video.name}} controls (playing)="onVideoClick(video)" poster='https://learningbytecdnendpoint.azureedge.net/{{video.imageName}}'>
+                        <source src='https://learningbytecdnendpoint.azureedge.net/{{video.name}}' type="video/mp4">
+                      Your browser does not support the video tag.
+                    </video>
+                    <div>
+                      {{video.description}}
+                    </div>
+                    <div style="font-size: 12px">
+                      <span>{{video.views}} views</span>
+                      <span style="float: right;">{{video.uploadedOn}}</span>
+                    </div>
+                </div>
+                <div *ngIf="showNewVideo" class="col-sm-12 col-md-12 col-lg-12">
+                  <h4>Newly Added videos</h4>
+                </div>
+                <ng-container *ngIf="showNewVideo">
+                <div class="blockConatiner" *ngFor="let video of newlyAddedVideoList() | slice:0:4; let i=index">
+                  <video id={{video.name}} controls (playing)="onVideoClick(video)" poster='https://learningbytecdnendpoint.azureedge.net/{{video.imageName}}'>
+                      <source src='https://learningbytecdnendpoint.azureedge.net/{{video.name}}' type="video/mp4">
+                    Your browser does not support the video tag.
+                  </video>
+                  <div>
+                    {{video.description}}
+                  </div>
+                  <div style="font-size: 12px">
+                    <span>{{video.views}} views</span>
+                    <span style="float: right;">{{video.uploadedOn}}</span>
+                  </div>
+                </div>
+              </ng-container>
+
+              </div>
+              
+            </div>
+      </div> -->
+    </div>
+  </div>
+</div>

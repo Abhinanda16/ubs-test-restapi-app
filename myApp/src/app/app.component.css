@@ -1,0 +1,66 @@
+#navbar-justify {
+    cursor: pointer;
+    padding: 5px 20px;
+}
+.navbar {
+    box-shadow: 0 7px 5px -6px rgba(0,0,0,0.5);
+}
+#navbarContent {
+    box-shadow: 7px 0px 5px -6px rgba(0,0,0,0.5);
+}
+.blockConatiner {
+    height: 200px;
+    width: 22%;
+    margin: 0% 1% 2% 1%;
+    position: relative;
+    overflow: hidden;
+}
+video {
+    height: 150px;
+    width: 100%
+}
+a {
+    color: darkred;
+}
+h4 {
+    background-color: papayawhip;
+}
+.TableRow1 {
+	background-color: #006633;
+	color: white;
+	text-align: center;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	font-size: 12px;
+}
+table{
+	border-collapse: separate;
+}
+.TableRow{
+	background-color: #eeeeee;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	font-size: 11px;
+}
+.TableRow3{
+	background-color: #dddddd;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	font-size: 11px;
+}
+.EditableText{
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	border-width: 1px;
+	font-weight: normal;
+	padding: 1px 0px;
+}
+ .col-sm-4, .col-sm-8,.col-sm-6, .col-md-6, .col-lg-6 {
+    position: relative;
+    width: 100%;
+    padding-right: 0px;
+	padding-left: 0px;
+}
+.col-sm-6, .col-md-6, .col-lg-6{
+    padding-left: 15px;
+}
+.row{
+	padding-right: 25px;
+	padding-left: 25px;
+}

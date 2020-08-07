@@ -16,7 +16,6 @@ export class AppComponent implements OnInit {
 
   public getNews(){
  
-    //'node_modules/angular-ide/bin/ng' 'serve' --port=4200 --live-reload=true --webclipse-launch-id=5661587131033163939sdsd
     return this.httpClient.post<any>(`https://functionapppoc20200714.azurewebsites.net/api/HttpExample?name=Geetaa`,
     "{id: 12, ename: 'geeta',ssn: 56564,email: 'abc@gmail.com'}"
     )
@@ -24,10 +23,6 @@ export class AppComponent implements OnInit {
     .subscribe(
       (data:any[]) => {console.log(data);});
     
-    /* ,
-    {observe: 'response'}
-    ).subscribe(Response => {console.log(Response.status)}) */
-    //map((response: Response) => {console.log(response.status)});
   }
 
   constructor(private httpClient: HttpClient) { }

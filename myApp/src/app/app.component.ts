@@ -13,6 +13,7 @@ export class AppComponent implements OnInit {
   riskp = "0";
   perf = "0";
   finalRating = "";
+  finalResponse = "";
 
   public getNews(){
  
@@ -22,7 +23,7 @@ export class AppComponent implements OnInit {
     )
     //return this.httpClient.get(`http://localhost:8080/addNumbers/17/100`)
     .subscribe(
-      (data:String) => {console.log(data);});
+      (data:string) => {this.finalResponse = data;});
     
   }
 

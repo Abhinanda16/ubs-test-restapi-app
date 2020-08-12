@@ -125,7 +125,8 @@
 <button class ="btn-success"type="button" (click)="fetchResult()">Calculate Rating</button>
 &nbsp;
 <button class ="btn-success"type="button" (click)="getNews()">Call Rest method</button>
-                </div>
+<div [innerHTML] = "finalResponse"></div>
+</div>
 </div>
 <div class="col-sm-4 col-md-4 col-lg-4">
 <table border="0" cellpadding="1" cellspacing = "1"

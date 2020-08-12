@@ -16,12 +16,13 @@ export class AppComponent implements OnInit {
 
   public getNews(){
  
-    return this.httpClient.post<any>(`https://functionapppoc20200714.azurewebsites.net/api/HttpExample?name=Geetaa`,
-    "{id: 12, ename: 'geeta',ssn: 56564,email: 'abc@gmail.com'}"
+    return this.httpClient.post(`http://functionapppoc20200714.azurewebsites.net/api/HttpExample?name=Geetaa`,
+    "{id: 12, ename: 'geeta',ssn: 56564,email: 'abc@gmail.com'}",
+     {responseType : 'text'}
     )
     //return this.httpClient.get(`http://localhost:8080/addNumbers/17/100`)
     .subscribe(
-      (data:any[]) => {console.log(data);});
+      (data:String) => {console.log(data);});
     
   }
 
